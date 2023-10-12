@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ADULT CENSUS DATA ANALYSIS AND MODELLING</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">HR4HKR</a>
+					</header>
+
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a>Post</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://github.com/hr4hkr/DSprojects/blob/main/Adult%20Census%20Data%20Analysis.ipynb" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">	
+									<h1>Adult Census Data analysis and Modelling</h1>
+									<p><a href="http://archive.ics.uci.edu/dataset/2/adult">Dataset</a><br>Problem: Predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset.
+									</p>
+								</header>
+								<div class="image main"><img src="images/post1-cover.jpg" alt="" /></div>
+								<p>
+									The goal of this study was to divide each individual into two distinct income classes, “>50K” and “<=50K”(binary classification). We will begin by analyzing and processing the data in order to create classification models that are capable of accomplishing that. The steps used to approach this challenge are listed below. To view the notebook and a more thorough explanation of each step, please visit my github repository linked above.
+								</p>
+								<ol>
+									<li>Dataset Import</li>
+									<li>Data Analysis</li>
+									<li>Data Wrangling</li>
+									<li>Modeling</li>
+								</ol>
+								<p>Let us now explore each step in detail.</p>
+								<h3>Dataset Import</h3>
+								<p>The used dataset can be simply imported into your notebook using the UCI-Irvine ML repo's python library. For instructions, see the dataset page linked above. Once imported, confirm that executing shape() on the dataset, which includes the target variable, returns (48842, 15). The information is kept in a dataFrame named “adult_new”.</p>
+								<h3>Data analysis</h3>
+								<p>We used a two-step process for data analysis in order to better comprehend the dataset. In order to examine the data distribution of each attribute and its relationship to the target variable, we first conducted a descriptive data analysis and then an exploratory data analysis.</p>
+								<p>We discovered that there are six continuous columns and nine categorical columns, including "income," through descriptive analysis. The next stage was to determine the unique values that occurred in each column in order to spot any anomalies in the consistency of the data.</p>
+								<pre><code>for name, val in adult_new.iteritems():
+	print('{}: {}'.format(name,val.unique())+"\n")</code></pre>
+								<p>As a result of the above attempt we gained two major insights regarding the data.</p>
+								<ol>
+									<li>There are various missing values in the form of nan and '?' in <b>“native-country”</b>, <b>“Occupation”</b>, <b>“workclass”</b>.</li>
+									<li>The target variable 'income' has 4 values instead of the expected 2.</li>								</li>
+								</ol>
+								<p>We will first clean the income variable, since this is a binary categorical variable  and should not have 4 values. The wrong values are ">50k." and "<=50k." which are duplicates of the expected values ">50k" and "<=50k". Hence we will replace the duplicates with the correct values.</p>
+								<pre><code>adult_new['income'].replace({'<=50K.':'<=50K','>50K.':'>50K'},inplace=True)</code></pre>
+								<h4>Univariate Analysis</h4>
+								<p>Studying the Income class distribution shows that the dataset is unbalanced as around 76% of data belongs to <=50K class and 24% belongs to >50K. In order to handle this we will do data sampling on the dataset moving forward.</p>
+								<p>Further analyzing each features in the dataset closely by plotting the distributions of key attributes like age, hours-per-week, education, sex, race and experience we can infer that most occurrences in the dataset are white males aged between 20-40 who are highschool graduates with around 8 - 10 years of experience and working for around 40 hours per week. Also among them around 67% are male and 33% female. Refer to the below graphs for better understanding.</p>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/incomeDistr.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/sexDstr.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/raceDistr.jpg" alt="" /></span></div>
+										<!-- Break -->
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/educationDistr.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/hoursPWDistr.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/univariateGraphs/ageDistr.jpg" alt="" /></span></div>
+									</div>
+								</div>	
+								<h4>Bivariate Analysis</h4>
+								<p> From the graphs comparing the income variable to attributes like age, sex, race and education we can say that the income column is dependent on the same.</p>
+								<div class="box alt">
+									<div class="row gtr-50 gtr-uniform">
+										<div class="col-4"><span class="image fit"><img src="images/BiVariateAnalysis/incomeVage.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/BiVariateAnalysis/incomeVrace.jpg" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/BiVariateAnalysis/incomeVSex.jpg" alt="" /></span></div>
+									</div>
+								</div>	
+								<h3>Data Wrangling</h3>
+								<p>Now that necessary insights have been extracted from the data, this dataset needed to be cleaned and pre-processed in order to feed as training data to ML classification algorithms. Firstly, we start with label encoding, then we will replace all “?” values with NaN and then replace the NaN occurrence in the dataset with mode in each column</p>
+								<h4>Label Encoding</h4>
+								<p> We use LabelEncoder() to encode the “income” column as it is a categorical variable.</p>
+								<pre><code>le= LabelEncoder() 
+adult_new['income']=le.fit_transform(adult_new['income'])</code></pre>
+								<p>Then we compare the correlation of the income variable to every other variable to find any redundant variables.</p>
+								<pre><code>adult_new.corr()</code></pre>
+								<p>By comparing the correlation values we observed that income has a negative correlation with column 'fnlwgt' and it has highest correlation with the columns  'education-num' and 'age' respectively. Hence we can infer that 'fnlwgt' is a redundant feature here and can be dropped.</p>
+								<pre><code>adult_new=adult_new.drop('fnlwgt',axis=1)</code></pre>
+								<h4>Data Cleaning</h4>
+								<p>Replace “?” values with NaN, and find the columns that have the null values.</p>
+								<pre><code>adult_new=adult_new.replace('?',np.nan)
+adult_new.isnull().sum() #checking for null values in each column
+								</code></pre>
+								<p>We know that the null values are present in columns 'workclass','occupation','native-country'. Hence we fill each of these NaN values with the highest occurring value from the same column.</p>
+								<pre><code>Nan_Cols=['workclass','occupation','native-country']
+for col in Nan_Cols:
+	adult_new[col].fillna(adult_new[col].mode()[0],inplace=True)</code></pre>
+								<p>As there are more than one categorical variable in the dataset we will go through each column of dtype ‘object’ and encode it, and then later on further scale the same as well.</p>
+								<pre><code>for col in adult_new.columns:
+	if adult_new[col].dtypes == 'object':
+		adult_new[col]=le.fit_transform(adult_new[col])</code></pre>
+								<h4>Feature Selection</h4>
+								<p>Since we are classifying the income class of each person we have selected the feature “income” from the dataset for classification.</p>
+								<pre><code>X= adult_new.drop('income',axis=1)
+y=adult_new['income']</code></pre>
+								<h4>Data Scaling</h4>
+								<p>We will be using MinMaxScaler() to scale the data.</p>
+								<pre><code>minmax = MinMaxScaler()
+for col in X.columns:
+    X[col] = minmax.fit_transform(X[col].values.reshape(-1,1))</code></pre>
+								<p>As we had noted before, this dataset is imbalanced. The below code shows that 76% belongs to ‘<=50K’ class and 24% belongs to ‘>50K’. Hence we will be sampling the dataset using SMOTE() oversampler.</p>
+								<pre><code>smote= SMOTE()
+smote.fit(X,y)
+X_sampled, y_sampled = smote.fit_resample(X,y)</code></pre>
+								<p>Now that we have cleaned, processed, scaled and sampled our data we will train some classification models and test the effectiveness of each. We will be using the below mentioned ML techniques to develop a classifier.</p>
+								<h6>Train-Test-Split</h6>
+								<pre><code>X_train, X_test, y_train, y_test=train_test_split(X_sampled,y_sampled, test_size=0.2)</code></pre>
+								<h3>Modelling</h3>
+								<p>The following machine learning models will be created in order to create a classification model and examine how well various ML algorithms categorise data into the two income classes.</p>
+								<ol>
+									<li>Logistic Regression</li>
+									<li>NaiveBayes Classifier</li>
+									<li>KNN Classifier</li>
+									<li>Support Vector Classifier</li>
+									<li>RandomForest Classifier</li>
+									<li>Decision Tree Classifier</li>
+								</ol>
+								<h4>Logistic Regression</h4>
+								<pre><code>from sklearn.linear_model import LogisticRegression
+model_logR = LogisticRegression()
+model_logR.fit(X_train, y_train)
+
+y_pred_logR=model_logR.predict(X_test)
+
+print("Logistic Regression:")
+print("Accuracy Score: {}%".format(round(accuracy_score(y_test,y_pred_logR)*100,2)))
+print("Recall Score: {}%".format(round(recall_score(y_test,y_pred_logR)*100,2)))
+print("F1 Score: {}%".format(round(f1_score(y_test,y_pred_logR)*100,2)))</code></pre>
+								<h4>NaiveBayes Classifier</h4>
+								<pre><code>from sklearn.naive_bayes import GaussianNB
+model_NB = GaussianNB()
+model_NB.fit(X_train, y_train)
+
+y_pred_NB=model_NB.predict(X_test)
+
+print("Naive Bayes Classifier:")
+print("Accuracy Score: {}%".format(round(accuracy_score(y_test,y_pred_NB)*100,2)))
+print("Recall Score: {}%".format(round(recall_score(y_test,y_pred_NB)*100,2)))
+print("F1 Score: {}%".format(round(f1_score(y_test,y_pred_NB)*100,2)))</code></pre>
+								<h4>RandomForest Classifier</h4>
+								<pre><code>from sklearn.ensemble import RandomForestClassifier
+model_rf = RandomForestClassifier()
+model_rf.fit(X_train,y_train)
+
+y_pred_rf = model_rf.predict(X_test)
+
+print("Random Forest Classifier:")
+print("Accuracy Score: {}%".format(round(accuracy_score(y_test,y_pred_rf)*100,2)))
+print("Recall Score: {}%".format(round(recall_score(y_test,y_pred_rf)*100,2)))
+print("F1 Score: {}%".format(round(f1_score(y_test,y_pred_rf)*100,2)))</code></pre>
+								<p>Please refer to the notebook uploaded in my github repo to see the development of models using KNN, Decision Tree and Support Vector Classifier. The confusion matrices for each of these values are also plotted. After implementing and comparing the performance matrices of each models we observed that Random Forest Model gave the highest accuracy and  F1 score, being 88.61% and 88.66% respectively. Whereas, KNN model showed the highest recall value of 89.97%. Below are the confusion matrices for Random Forest and KNN classifier models.</p>
+								<h2>Conclusion</h2>
+									<div class="box">
+										<p>Our prediction task was to determine whether a person makes over 50K a year or not. After doing thorough analysis of the dataset we have gainend below observations and results</p>
+										<ol>
+											<li>We gained the below valuable insights from the data by doing different types of analysis:
+												<ul>
+													<li>Most of the occurances in the dataset are white males aged between 20-40, high school graduates with around 8 - 10 years of experience and working for around 40 hours per week.</li>
+													<li>Around 67% male and 33% female.</li>
+													<li>The data needs to be sampled as the dataset is unbalanced. ie; since 76% data belongs to '<=50K' class and only 24% belongs to '>50K'</li>
+												</ul>
+											</li>
+											<li>Here, we have preprocessed, scaled and sampled the data then trained 6 different machine learing models.</li>
+											<li>Random Forest Classifier is the best performing model amongst all the models trained and tested with the below scores: <b>Accuracy Score: 88.45% Recall Score: 89.04% F1 Score: 88.52%</b></li>
+										</ol>						
+									</div>
+							</section>
+
+					</div>
+
+					<footer id="footer">
+						<section class="split contact">
+							<section>
+								<h3>Email</h3>
+								<p>hr4hkr@gmail.com</p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons">
+									<li><a href="https://twitter.com/hr4hkr" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.linkedin.com/in/hr4hkr/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/hr4hkr" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; hr4hkr</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
