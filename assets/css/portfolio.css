@@ -117,3 +117,52 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
 	.project-card { transition: none; }
 	.project-card:hover { transform: none; }
 }
+
+/* About, career history, and homepage contact form */
+.about-panel { grid-template-columns: minmax(0, 1.45fr) minmax(15rem, .55fr); align-items: start; gap: 2.5rem 3rem; }
+.about-copy p:not(.eyebrow) { max-width: 54rem; line-height: 1.8; }
+.about-aside { align-self: stretch; }
+.about-aside .toolkit { position: sticky; top: 2rem; align-self: start; margin-top: 2rem; }
+.experience-section { grid-column: 1 / -1; padding-top: 2rem; border-top: 1px solid #cadbd5; }
+.experience-heading { margin-bottom: 1.4rem; }
+.experience-heading .eyebrow { margin-bottom: .35rem; }
+.experience-heading h2 { margin: 0; font-size: clamp(1.6rem, 3vw, 2rem); }
+.experience-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.experience-entry { padding: 1.25rem 1.35rem; border: 1px solid #d8e4df; border-radius: .35rem; background: rgba(255,255,255,.72); }
+.experience-entry header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.experience-entry h3 { margin: 0; color: var(--portfolio-ink); font-size: 1rem; line-height: 1.35; }
+.experience-entry p { margin: .3rem 0 0; color: var(--portfolio-muted); font-size: .82rem; line-height: 1.5; }
+.experience-entry .experience-dates { flex: 0 0 auto; margin: .1rem 0 0; color: var(--portfolio-accent-dark); font-size: .73rem; font-weight: 800; text-align: right; }
+.experience-entry ul { margin: .85rem 0 0; padding-left: 1.1rem; }
+.experience-entry li, .experience-entry > p { color: var(--portfolio-muted); font-size: .84rem; line-height: 1.6; }
+.experience-entry li + li { margin-top: .35rem; }
+#footer.portfolio-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 2.5rem; }
+.contact-panel { min-width: 0; max-width: 52rem; }
+.contact-panel h2 { max-width: 36rem; margin: 0 0 .65rem; color: var(--portfolio-ink); font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: -.04em; line-height: 1.15; }
+.contact-panel > p:not(.eyebrow) { margin: 0 0 1.5rem; color: var(--portfolio-muted); }
+.contact-panel .eyebrow, .social-panel .eyebrow { margin-bottom: .65rem; }
+.contact-form { display: grid; gap: 1rem; }
+.contact-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.contact-form label { display: grid; gap: .4rem; color: #385254; font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
+.contact-form input, .contact-form textarea { width: 100%; padding: .75rem .85rem; border: 1px solid #cbdad4; border-radius: .25rem; background: #fff; color: var(--portfolio-ink); font: inherit; font-size: .9rem; letter-spacing: 0; }
+.contact-form textarea { min-height: 7rem; resize: vertical; }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--portfolio-accent); outline: 2px solid rgba(8,127,140,.18); }
+.contact-submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.2rem; }
+.contact-submit-row .button { display: inline-flex; align-items: center; gap: .55rem; min-height: 2.8rem; padding: .7rem 1.1rem; border: 0; border-radius: 2rem; background: var(--portfolio-accent-dark); color: #fff !important; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.contact-submit-row small { color: var(--portfolio-muted); font-size: .72rem; line-height: 1.5; }
+.social-panel { min-width: 9rem; padding-left: 1.5rem; border-left: 1px solid #cadbd5; }
+.social-line { align-items: center; gap: .7rem; }
+.social-icon { display: grid; width: 2.8rem; height: 2.8rem; place-items: center; border: 1px solid #cbdad4 !important; border-radius: 50%; background: rgba(255,255,255,.75); transition: background .2s ease, transform .2s ease; }
+.social-icon:hover { transform: translateY(-2px); background: #fff; }
+.social-icon svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+@media screen and (max-width: 736px) {
+  .about-panel { grid-template-columns: 1fr; gap: 1.5rem; }
+  .about-aside .toolkit { position: static; margin-top: 0; }
+  .experience-section { grid-column: auto; }
+  .experience-list { grid-template-columns: 1fr; }
+  .experience-entry header { flex-direction: column; gap: .2rem; }
+  .experience-entry .experience-dates { text-align: left; }
+  #footer.portfolio-footer { grid-template-columns: 1fr; gap: 1.8rem; }
+  .contact-form-row { grid-template-columns: 1fr; }
+  .social-panel { padding: 1.2rem 0 0; border-top: 1px solid #cadbd5; border-left: 0; }
+}
