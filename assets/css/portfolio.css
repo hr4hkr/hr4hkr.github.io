@@ -361,3 +361,33 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
   font-size: .72rem;
   line-height: 1.55;
 }
+
+
+/* Keep long company labels inside their selector and make the bi0s profile scan cleanly. */
+#main .experience-tab {
+  white-space: normal;
+}
+#main .experience-tab span {
+  flex: 1 1 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+}
+#main .role-history {
+  gap: 0;
+}
+#main .role-history li {
+  padding: .55rem .15rem;
+  border: 0;
+  border-bottom: 1px solid var(--portfolio-line);
+  border-radius: 0;
+  background: transparent;
+}
+#main .role-history li:last-child {
+  border-bottom: 0;
+}
+@media screen and (max-width: 736px) {
+  #main .experience-tabs { align-items: stretch; }
+  #main .experience-tab { max-width: 13rem; white-space: normal; }
+  #main .role-history li { padding: .55rem 0; }
+}
