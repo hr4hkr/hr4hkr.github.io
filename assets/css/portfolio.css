@@ -351,3 +351,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
   #main .role-history li { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
   #main .role-history span { white-space: normal; text-align: left; }
 }
+
+
+.experience-disclaimer {
+  margin: 1rem 0 0;
+  padding-top: .85rem;
+  border-top: 1px solid #dce6e3;
+  color: #657779;
+  font-size: .72rem;
+  line-height: 1.55;
+}
