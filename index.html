@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Selected data analytics and machine learning projects by Harikrishnan R." />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/portfolio.css?v=20261013c" />
+	<link rel="stylesheet" href="assets/css/portfolio.css?v=20261013d" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
 		#intro.portfolio-intro h1 { max-width: none; width: max-content; max-width: 100%; white-space: nowrap; font-size: clamp(1.8rem, 6vw, 5rem); letter-spacing: -.055em; }
@@ -20,11 +20,53 @@
 			<p class="intro-copy">I turn complex datasets into clear analysis, practical insights, and carefully evaluated models.</p>
 			<ul class="actions intro-actions">
 				<li><a href="#projects" class="button primary scrolly">Explore projects</a></li>
+				<li><a href="#about" class="button scrolly">About me</a></li>
 				<li><a href="mailto:hr4hkr@gmail.com" class="button">Get in touch</a></li>
 			</ul>
-			<a href="#projects" class="continue-link scrolly" aria-label="Scroll to selected work"><span>Selected work</span><span aria-hidden="true">↓</span></a>
 		</div>
 		<main id="main">
+			<section class="about-panel" id="about">
+				<div class="about-copy">
+					<p class="eyebrow">About me</p>
+					<h2>Data-backed product analytics for better business decisions.</h2>
+					<p>I’m a Product Definition Analyst in the airline domain, specializing in data wrangling, requirements gathering, and turning business questions into insights that drive measurable outcomes.</p>
+					<p>My work spans price exploration and exploitation for ancillary services, KPI design and implementation, data quality monitoring, and data visualization. I build automated data pipelines and perform complex analyses to support strategic decisions.</p>
+					<p>I’m passionate about combining domain expertise and technical skills to create analytics solutions that are impactful, scalable, and practical for the teams using them.</p>
+				</div>
+				<aside class="about-aside">
+					<div class="toolkit"><h3>Tools and methods</h3><p>Python · pandas · NumPy · scikit-learn · XGBoost · statsmodels · Matplotlib · Seaborn</p></div>
+				</aside>
+				<section class="experience-section" aria-labelledby="experience-title">
+					<div class="experience-heading"><p class="eyebrow">Career history</p><h2 id="experience-title">Where I’ve worked</h2></div>
+					<div class="experience-browser">
+						<div class="experience-tabs" role="tablist" aria-label="Work experience" aria-orientation="vertical">
+							<button type="button" id="tab-amadeus" class="experience-tab" role="tab" aria-selected="true" aria-controls="panel-amadeus" tabindex="0">Amadeus</button>
+							<button type="button" id="tab-hexaware" class="experience-tab" role="tab" aria-selected="false" aria-controls="panel-hexaware" tabindex="-1">Hexaware Technologies</button>
+							<button type="button" id="tab-seconize" class="experience-tab" role="tab" aria-selected="false" aria-controls="panel-seconize" tabindex="-1">Seconize</button>
+							<button type="button" id="tab-bios" class="experience-tab" role="tab" aria-selected="false" aria-controls="panel-bios" tabindex="-1">Team bi0s</button>
+						</div>
+						<div class="experience-panels">
+							<section class="experience-detail" id="panel-amadeus" role="tabpanel" aria-labelledby="tab-amadeus" tabindex="0">
+								<div class="experience-detail-heading"><div><p class="experience-company">Amadeus</p><h3>Product Definition Analyst</h3></div><p class="experience-dates">June 2026 – Present</p></div>
+								<ul><li>Analyzed ancillary pricing to identify price points, balancing new tests with proven performers.</li><li>Designed health KPIs and monitored data quality, experiment health, and A/B traffic allocation.</li><li>Built dashboards that make pricing and performance insights actionable for product and business teams.</li></ul>
+							</section>
+							<section class="experience-detail" id="panel-hexaware" role="tabpanel" aria-labelledby="tab-hexaware" tabindex="0" hidden>
+								<div class="experience-detail-heading"><div><p class="experience-company">Hexaware Technologies</p><h3>Data Analyst</h3></div><p class="experience-dates">June 2021 – June 2026</p></div>
+								<ul><li>Ingested data and created analytical base tables for downstream analysis.</li><li>Translated business challenges into analytical solutions through data wrangling, feature engineering, and metric development.</li><li>Improved analysis accuracy across transactional, demographic, and engagement datasets.</li></ul>
+							</section>
+							<section class="experience-detail" id="panel-seconize" role="tabpanel" aria-labelledby="tab-seconize" tabindex="0" hidden>
+								<div class="experience-detail-heading"><div><p class="experience-company">Seconize · Remote</p><h3>Software Engineer Intern</h3></div><p class="experience-dates">June 2020 – July 2020</p></div>
+								<p>Configured and managed a Neo4j graph database service to meet project requirements.</p>
+							</section>
+							<section class="experience-detail" id="panel-bios" role="tabpanel" aria-labelledby="tab-bios" tabindex="0" hidden>
+								<div class="experience-detail-heading"><div><p class="experience-company">Team bi0s · Freelance, alongside college</p><h3>Forensics and cybersecurity roles</h3></div><p class="experience-dates">September 2017 – October 2019</p></div>
+								<p>Core team member and CTF player. Progressed through three roles during college:</p>
+								<ul class="role-history"><li><strong>Computer Forensic Analyst</strong><span>July 2018 – October 2019</span></li><li><strong>Associate Forensic Analyst</strong><span>January 2018 – June 2018</span></li><li><strong>Trainee</strong><span>September 2017 – December 2017</span></li></ul>
+							</section>
+						</div>
+					</div>
+				</section>
+			</section>
 			<section class="section-heading" id="projects"><h2>Projects built around real questions</h2><p>From data cleaning and exploration to model evaluation, each project documents the decisions behind the result.</p></section>
 			<section class="project-grid" aria-label="Project case studies">
 				<article class="project-card project-card-featured"><div class="project-art art-adult" aria-hidden="true"><span>01</span><i></i><b></b></div><div class="project-card-copy"><p class="project-kicker">Classification · UCI Adult Census</p><h3><a href="post1_adult.html">Income classification with census data</a></h3><p>A full workflow covering data checks, missing-value handling, exploratory analysis, feature preparation, and comparison of six classifiers.</p><ul class="tag-list"><li>Python</li><li>EDA</li><li>scikit-learn</li></ul><a class="text-link" href="post1_adult.html">Read the case study <span aria-hidden="true">→</span></a></div></article>
@@ -33,29 +75,7 @@
 				<article class="project-card"><div class="project-art art-sales" aria-hidden="true"><span>04</span><i></i><b></b></div><div class="project-card-copy"><p class="project-kicker">Commercial analytics · Retail</p><h3><a href="post_sales.html">Finding patterns in retail transactions</a></h3><p>Summarizes sales by time, country, product, and customer, with a first look at products appearing together.</p><ul class="tag-list"><li>Retail</li><li>Time series</li><li>Basket analysis</li></ul><a class="text-link" href="post_sales.html">Read the case study <span aria-hidden="true">→</span></a></div></article>
 				<article class="project-card"><div class="project-art art-loan" aria-hidden="true"><span>05</span><i></i><b></b></div><div class="project-card-copy"><p class="project-kicker">Classification · Loan default</p><h3><a href="post_loan_default.html">A first pass at default prediction</a></h3><p>Investigates an imbalanced loan dataset and compares a Random Forest with a Decision Tree.</p><ul class="tag-list"><li>Imbalanced data</li><li>SMOTE</li><li>Model evaluation</li></ul><a class="text-link" href="post_loan_default.html">Read the case study <span aria-hidden="true">→</span></a></div></article>
 			</section>
-			<section class="about-panel" id="about">
-				<div class="about-copy">
-					<p class="eyebrow">About</p>
-					<h2>Product definition and analytics for better airline decisions.</h2>
-					<p>I’m a Product Definition Analyst in the airline domain, specializing in data wrangling, requirements gathering, and turning business questions into insights that drive measurable outcomes.</p>
-					<p>My work spans price exploration and exploitation for ancillary services, KPI design and implementation, data quality monitoring, and data visualization. I build automated data pipelines and perform complex analyses to support strategic decisions.</p>
-					<p>I’m passionate about combining domain expertise and technical skills to create analytics solutions that are impactful, scalable, and practical for the teams using them.</p>
-				</div>
-				<aside class="about-aside">
-					<div class="toolkit"><h3>Tools and methods</h3><p>Python · pandas · NumPy · scikit-learn · XGBoost · statsmodels · Matplotlib · Seaborn</p><a class="text-link" href="https://github.com/hr4hkr/DSprojects">More work on GitHub <span aria-hidden="true">→</span></a></div>
-				</aside>
-				<section class="experience-section" aria-labelledby="experience-title">
-					<div class="experience-heading"><p class="eyebrow">Career history</p><h2 id="experience-title">Experience</h2></div>
-					<div class="experience-list">
-						<article class="experience-entry"><header><div><h3>Product Definition Analyst</h3><p class="experience-company">Amadeus · Airline domain</p></div><p class="experience-dates">June 2026 – Present</p></header><ul><li>Analyzed airline ancillary pricing to identify price points, balancing new price tests with proven performers.</li><li>Designed health KPIs and monitored pricing data quality, experiment health, and A/B traffic allocation.</li><li>Built dashboards that make pricing and performance insights actionable for product and business teams.</li></ul></article>
-						<article class="experience-entry"><header><div><h3>Data Analyst</h3><p class="experience-company">Hexaware Technologies</p></div><p class="experience-dates">June 2021 – June 2026</p></header></article>
-						<article class="experience-entry"><header><div><h3>Software Engineer Intern</h3><p class="experience-company">Seconize · Remote</p></div><p class="experience-dates">June 2020 – July 2020</p></header><p>Configured and managed a Neo4j graph database service to meet project requirements.</p></article>
-						<article class="experience-entry"><header><div><h3>Computer Forensic Analyst</h3><p class="experience-company">Team bi0s</p></div><p class="experience-dates">July 2018 – October 2019</p></header><p>Core team member and CTF player.</p></article>
-						<article class="experience-entry"><header><div><h3>Associate Forensic Analyst</h3><p class="experience-company">Team bi0s</p></div><p class="experience-dates">January 2018 – June 2018</p></header></article>
-						<article class="experience-entry"><header><div><h3>Trainee</h3><p class="experience-company">Team bi0s</p></div><p class="experience-dates">September 2017 – December 2017</p></header></article>
-					</div>
-				</section>
-			</section>
+			<section class="more-projects"><a class="text-link" href="https://github.com/hr4hkr/DSprojects">More work on GitHub <span aria-hidden="true">→</span></a></section>
 		</main>
 		<footer id="footer" class="portfolio-footer">
 			<section class="contact-panel">
@@ -79,6 +99,41 @@
 		<div id="copyright"><ul><li>© Harikrishnan R</li><li>Design foundation: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
 	</div>
 	<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
-	<script>function composeContactEmail(event){event.preventDefault();const form=event.currentTarget;const data=new FormData(form);const name=String(data.get("name")||"").trim();const email=String(data.get("email")||"").trim();const message=String(data.get("message")||"").trim();const subject=encodeURIComponent("Portfolio collaboration message from "+name);const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+"\n\n"+message);window.location.href="mailto:hr4hkr@gmail.com?subject="+subject+"&body="+body;return false;}</script>
+	<script>
+		function composeContactEmail(event) {
+			event.preventDefault();
+			const data = new FormData(event.currentTarget);
+			const name = String(data.get("name") || "").trim();
+			const email = String(data.get("email") || "").trim();
+			const message = String(data.get("message") || "").trim();
+			const subject = encodeURIComponent("Portfolio collaboration message from " + name);
+			const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+			window.location.href = "mailto:hr4hkr@gmail.com?subject=" + subject + "&body=" + body;
+			return false;
+		}
+		(() => {
+			const tabs = Array.from(document.querySelectorAll('.experience-tab'));
+			function activateTab(tab, moveFocus) {
+				tabs.forEach(item => {
+					const selected = item === tab;
+					item.setAttribute('aria-selected', String(selected));
+					item.tabIndex = selected ? 0 : -1;
+					document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+				});
+				if (moveFocus) tab.focus();
+			}
+			tabs.forEach((tab, index) => {
+				tab.addEventListener('click', () => activateTab(tab, false));
+				tab.addEventListener('keydown', event => {
+					let next = null;
+					if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+					if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+					if (event.key === 'Home') next = 0;
+					if (event.key === 'End') next = tabs.length - 1;
+					if (next !== null) { event.preventDefault(); activateTab(tabs[next], true); }
+				});
+			});
+		})();
+	</script>
 </body>
 </html>
