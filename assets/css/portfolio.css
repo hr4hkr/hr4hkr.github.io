@@ -10,7 +10,7 @@ html { scroll-behavior: smooth; }
 body.portfolio-home, body.project-page { color: var(--portfolio-ink); }
 body.portfolio-home #wrapper, body.project-page #wrapper { background: var(--portfolio-paper); }
 a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offset: 4px; }
-#intro.portfolio-intro { min-height: 78vh; padding: 9rem 2rem 7rem; background: linear-gradient(135deg, rgba(9, 43, 49, .96), rgba(8, 91, 104, .88)), url("../../images/bg.jpg") center / cover; text-align: left; align-items: flex-start; }
+#intro.portfolio-intro { min-height: 100vh; min-height: 100svh; box-sizing: border-box; padding: 9rem 2rem 2rem; background: linear-gradient(135deg, rgba(9, 43, 49, .96), rgba(8, 91, 104, .88)), url("../../images/bg.jpg") center / cover; text-align: left; align-items: flex-start; }
 #intro.portfolio-intro h1 { max-width: 12ch; margin: .2rem 0 1.3rem; font-size: clamp(3.6rem, 9vw, 7.25rem); line-height: .98; letter-spacing: -.055em; }
 #intro.portfolio-intro .intro-copy { max-width: 38rem; margin: 0; color: rgba(255,255,255,.82); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.65; }
 .eyebrow { margin: 0 0 .9rem; color: var(--portfolio-accent); font-size: .72rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; text-transform: uppercase; }
@@ -18,7 +18,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
 .intro-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0 0 !important; }
 .intro-actions .button { border-radius: 2rem; }
 .intro-actions .button.primary { background: #f1b768; border-color: #f1b768; color: #193336 !important; box-shadow: none; }
-.continue-link { display: inline-flex; gap: .8rem; align-items: center; margin-top: 5rem; color: rgba(255,255,255,.76); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.continue-link { display: inline-flex; gap: .8rem; align-items: center; margin-top: auto; padding-top: 3rem; color: rgba(255,255,255,.76); font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .continue-link span:last-child { color: #92d8d5; font-size: 1.3rem; }
 #header .logo { border-radius: .2rem; font-size: 1rem; letter-spacing: .12em; }
 #nav { background: #f2f6f4; }
@@ -94,7 +94,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
 .post-actions .button { border-radius: 2rem; }
 .post-footer-links { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--portfolio-line); }
 @media screen and (max-width: 736px) {
-	#intro.portfolio-intro { min-height: 72vh; padding: 6rem 1.5rem 4rem; }
+	#intro.portfolio-intro { min-height: 100vh; min-height: 100svh; padding: 6rem 1.5rem 1.5rem; }
 	.continue-link { margin-top: 3rem; }
 	#main { padding: 2.5rem 1.1rem; }
 	.project-grid { grid-template-columns: 1fr; }
