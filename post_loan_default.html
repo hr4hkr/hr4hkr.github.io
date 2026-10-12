@@ -10,9 +10,7 @@
 </head>
 <body class="is-preload project-page">
 	<div id="wrapper">
-		<header id="header"><a href="index.html" class="logo">HR4HKR</a></header>
-		<nav id="nav" aria-label="Primary navigation"><ul class="links"><li><a href="index.html">Portfolio</a></li><li class="active"><a href="#main">Case study</a></li></ul><ul class="icons"><li><a href="https://github.com/hr4hkr" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li></ul></nav>
-		<main id="main"><article class="post project-post">
+<main id="main"><article class="post project-post">
 			<header class="major"><p class="eyebrow">Project 05 · Loan default prediction</p><h1>A first pass at default prediction</h1><p>This project explores whether applicant and loan attributes can help identify default risk, with class imbalance as the central modeling challenge.</p></header>
 			<div class="project-hero hero-loan"><p class="hero-index">05</p><p class="hero-caption">Data checks · class imbalance · model comparison</p></div>
 			<dl class="project-meta"><div><dt>Project type</dt><dd>Binary classification</dd></div><div><dt>Notebook tools</dt><dd>pandas, scikit-learn, imbalanced-learn</dd></div><div><dt>Training data</dt><dd>67,563 rows · 35 columns</dd></div></dl>
@@ -23,11 +21,9 @@
 			<p>On the notebook’s balanced test split, the Random Forest reports 91.55% accuracy, 86.65% recall, and 91.12% F1 for the positive class. The Decision Tree reports 82.74% accuracy and 85.04% positive-class recall. These figures describe the saved run, but they are not a reliable estimate of performance on naturally imbalanced future applicants.</p>
 			<aside class="callout"><p><strong>Validation caveat.</strong> SMOTE is applied to the full dataset before the train/test split. Synthetic examples can therefore influence both sides of the evaluation, and the test set is balanced unlike the original 9.26% default share. The notebook also applies the Loan Amount mode to the whole frame before attempting a Term fill. Both steps need correction before the scores can be used to compare real-world model performance.</p></aside>
 			<h2>Next iteration</h2><p>Split the original data first with stratification, fit preprocessing and resampling on training data only, impute each feature separately, and evaluate on an untouched holdout at the natural class ratio. Report class-specific precision, recall, PR AUC, and a threshold selected for the business cost of missed defaults. The categorical plotting grid also needs room for all nine categories.</p>
-			<div class="post-actions"><a class="button primary" href="https://github.com/hr4hkr/DSprojects/blob/main/TR_LoanDefaultProblem.ipynb">View notebook</a><a class="button" href="index.html#projects">All projects</a></div>
+			<div class="post-actions"><a class="button primary" href="https://github.com/hr4hkr/DSprojects/blob/main/TR_LoanDefaultProblem.ipynb">View notebook</a></div>
 		</article></main>
-		<footer id="footer" class="portfolio-footer"><section class="contact-line"><h3>Let’s connect</h3><a href="mailto:hr4hkr@gmail.com">hr4hkr@gmail.com</a></section><section class="social-line"><a href="https://www.linkedin.com/in/hr4hkr/">LinkedIn</a><a href="https://github.com/hr4hkr">GitHub</a></section></footer>
-		<div id="copyright"><ul><li>© Harikrishnan R</li><li><a href="index.html">Portfolio home</a></li></ul></div>
-	</div>
+</div>
 	<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
 </body>
 </html>
