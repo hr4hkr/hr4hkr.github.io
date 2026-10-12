@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Selected data analytics and machine learning projects by Harikrishnan R." />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/portfolio.css?v=20261013b" />
+	<link rel="stylesheet" href="assets/css/portfolio.css?v=20261013c" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
 		#intro.portfolio-intro h1 { max-width: none; width: max-content; max-width: 100%; white-space: nowrap; font-size: clamp(1.8rem, 6vw, 5rem); letter-spacing: -.055em; }
@@ -33,11 +33,48 @@
 				<article class="project-card"><div class="project-art art-sales" aria-hidden="true"><span>04</span><i></i><b></b></div><div class="project-card-copy"><p class="project-kicker">Commercial analytics · Retail</p><h3><a href="post_sales.html">Finding patterns in retail transactions</a></h3><p>Summarizes sales by time, country, product, and customer, with a first look at products appearing together.</p><ul class="tag-list"><li>Retail</li><li>Time series</li><li>Basket analysis</li></ul><a class="text-link" href="post_sales.html">Read the case study <span aria-hidden="true">→</span></a></div></article>
 				<article class="project-card"><div class="project-art art-loan" aria-hidden="true"><span>05</span><i></i><b></b></div><div class="project-card-copy"><p class="project-kicker">Classification · Loan default</p><h3><a href="post_loan_default.html">A first pass at default prediction</a></h3><p>Investigates an imbalanced loan dataset and compares a Random Forest with a Decision Tree.</p><ul class="tag-list"><li>Imbalanced data</li><li>SMOTE</li><li>Model evaluation</li></ul><a class="text-link" href="post_loan_default.html">Read the case study <span aria-hidden="true">→</span></a></div></article>
 			</section>
-			<section class="about-panel" id="about"><div><p class="eyebrow">About</p><h2>Curious about the story behind the numbers.</h2><p>I use Python-based analysis to understand data quality, uncover patterns, and test whether a model is useful. These case studies share the approach, the results recorded in the notebooks, and the limitations that matter when interpreting them.</p></div><div class="toolkit"><h3>Tools across these projects</h3><p>Python · pandas · NumPy · scikit-learn · XGBoost · statsmodels · Matplotlib · Seaborn</p><a class="text-link" href="https://github.com/hr4hkr">More work on GitHub <span aria-hidden="true">→</span></a></div></section>
+			<section class="about-panel" id="about">
+				<div class="about-copy">
+					<p class="eyebrow">About</p>
+					<h2>Product definition and analytics for better airline decisions.</h2>
+					<p>I’m a Product Definition Analyst in the airline domain. I work across data wrangling and requirements gathering to turn business questions into insights that support measurable outcomes.</p>
+					<p>My experience includes price exploration and exploitation, KPI design and implementation, data quality monitoring, and data visualization. I also build automated data pipelines and perform complex analyses to support strategic decisions.</p>
+					<p>I’m passionate about combining domain knowledge and technical skills to create analytics solutions that are practical, scalable, and useful.</p>
+				</div>
+				<div class="about-aside">
+					<div class="toolkit"><h3>Tools and methods</h3><p>Python · pandas · NumPy · scikit-learn · XGBoost · statsmodels · Matplotlib · Seaborn</p><a class="text-link" href="https://github.com/hr4hkr/DSprojects">More work on GitHub <span aria-hidden="true">→</span></a></div>
+				</div>
+				<div class="experience-section">
+					<p class="eyebrow">Experience</p>
+					<article class="experience-entry">
+						<div><h3>Product Definition Analyst</h3><p class="experience-domain">Airline domain</p></div>
+						<ul><li>Translate business needs into clear requirements and measurable KPIs.</li><li>Build reliable data pipelines and monitor data quality.</li><li>Use pricing analysis, complex analytics, and visualization to inform decisions.</li></ul>
+					</article>
+				</div>
+			</section>
 		</main>
-		<footer id="footer" class="portfolio-footer"><section class="contact-line"><h3>Let’s connect</h3><a href="mailto:hr4hkr@gmail.com">hr4hkr@gmail.com</a></section><section class="social-line"><a href="https://www.linkedin.com/in/hr4hkr/">LinkedIn</a><a href="https://github.com/hr4hkr">GitHub</a></section></footer>
+		<footer id="footer" class="portfolio-footer">
+			<section class="contact-panel">
+				<p class="eyebrow">Let’s work together</p>
+				<h2>Have a project or an idea to explore?</h2>
+				<p>Drop me a message if you’d like to collaborate or work together.</p>
+				<form class="contact-form" onsubmit="return composeContactEmail(event)">
+					<div class="contact-form-row"><label>Your name<input type="text" name="name" autocomplete="name" required /></label><label>Your email<input type="email" name="email" autocomplete="email" required /></label></div>
+					<label>Your message<textarea name="message" rows="4" required></textarea></label>
+					<div class="contact-submit-row"><button type="submit" class="button primary">Send a message <span aria-hidden="true">→</span></button><small>This opens your email app with the message ready to send.</small></div>
+				</form>
+			</section>
+			<section class="social-panel" aria-label="Social profiles">
+				<p class="eyebrow">Find me online</p>
+				<div class="social-line">
+					<a class="social-icon" href="https://www.linkedin.com/in/hr4hkr/" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.34H4.96V9.1h2.97v9.24ZM6.45 7.84a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.9 10.5h-2.96v-4.5c0-1.08-.02-2.48-1.51-2.48-1.51 0-1.74 1.18-1.74 2.4v4.58H9.18V9.1h2.84v1.26h.04c.4-.73 1.36-1.5 2.8-1.5 3 0 3.55 1.97 3.55 4.53v4.95Z"/></svg></a>
+					<a class="social-icon" href="https://github.com/hr4hkr" aria-label="GitHub profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.76-1.32-3.76-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.73 1.98 3.06 1.51.1-.72.39-1.22.7-1.5-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.54.23 2.68.12 2.96.71.78 1.14 1.78 1.14 3 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.02.75 2.06v3.04c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg></a>
+				</div>
+			</section>
+		</footer>
 		<div id="copyright"><ul><li>© Harikrishnan R</li><li>Design foundation: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
 	</div>
 	<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+	<script>function composeContactEmail(event){event.preventDefault();const form=event.currentTarget;const data=new FormData(form);const name=String(data.get("name")||"").trim();const email=String(data.get("email")||"").trim();const message=String(data.get("message")||"").trim();const subject=encodeURIComponent("Portfolio collaboration message from "+name);const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+"\n\n"+message);window.location.href="mailto:hr4hkr@gmail.com?subject="+subject+"&body="+body;return false;}</script>
 </body>
 </html>
