@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Retail Transaction Analysis — Harikrishnan R</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Sales, customer, product, and time-based exploration of a retail transaction dataset." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/portfolio.css" />
+</head>
+<body class="is-preload project-page">
+	<div id="wrapper">
+		<header id="header"><a href="index.html" class="logo">HR4HKR</a></header>
+		<nav id="nav" aria-label="Primary navigation"><ul class="links"><li><a href="index.html">Portfolio</a></li><li class="active"><a href="#main">Case study</a></li></ul><ul class="icons"><li><a href="https://github.com/hr4hkr" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li></ul></nav>
+		<main id="main"><article class="post project-post">
+			<header class="major"><p class="eyebrow">Project 04 · Retail analytics</p><h1>Finding patterns in retail transactions</h1><p>A practical exploration of a two-year transaction file: what sold, where revenue came from, when activity peaked, and which products appeared together.</p></header>
+			<div class="project-hero hero-sales"><p class="hero-index">04</p><p class="hero-caption">Transaction cleanup · sales patterns · product mix</p></div>
+			<dl class="project-meta"><div><dt>Project type</dt><dd>Commercial exploratory analysis</dd></div><div><dt>Notebook tools</dt><dd>pandas, Seaborn, Matplotlib</dd></div><div><dt>Retained rows</dt><dd>407,664 after the notebook’s cleaning steps</dd></div></dl>
+			<h2>From line items to business questions</h2>
+			<p>I checked missing product and customer fields, then created sales value as quantity multiplied by unit price. Date fields were expanded into month, weekday, year, and hour so the transaction file could be summarized across time, countries, products, and customers.</p>
+			<p>The exploratory views include distributions of quantity and price, monthly and weekday sales, country-level sales, top products and customers, and a simple count of product pairs within invoices.</p>
+			<h2>Selected results in the notebook</h2>
+			<div class="result-grid"><div class="result-card"><strong>£8.83M</strong><span>Sales value across the retained rows</span></div><div class="result-card"><strong>£7.41M</strong><span>Recorded sales for the United Kingdom</span></div><div class="result-card"><strong>56,915</strong><span>Units of the top listed product</span></div></div>
+			<p>The White Hanging Heart T-Light Holder is the top product by quantity in the saved output. The notebook’s most frequent product pair is the red and white hanging heart tea-light holders, appearing together 815 times in its invoice-level count.</p>
+			<h2>What this view can—and cannot—say</h2><p>Country and customer summaries help identify where the recorded sales are concentrated; product and time summaries can guide follow-up questions about assortment and trading patterns. They are descriptive results, not evidence that a marketing change would cause revenue to grow.</p>
+			<aside class="callout"><p><strong>Cleaning note.</strong> The notebook removes negative-quantity rows before it checks cancellation invoices, so the reported “zero cancellations” is not a valid count. The revenue total is for the rows retained after filtering, not net sales after verified returns. Pair counts are also a simple co-occurrence tally; they should be deduplicated per invoice before being treated as a robust basket analysis.</p></aside>
+			<h2>Next steps</h2><p>Separate cancellation and return records before filtering, label the revenue metric as gross or net, calculate customer and product rates with clear denominators, and use unique products per invoice for basket comparisons.</p>
+			<div class="post-actions"><a class="button primary" href="https://github.com/hr4hkr/DSprojects/blob/main/Sales%20Data%20Analysis.ipynb">View notebook</a><a class="button" href="index.html#projects">All projects</a></div>
+		</article></main>
+		<footer id="footer" class="portfolio-footer"><section class="contact-line"><h3>Let’s connect</h3><a href="mailto:hr4hkr@gmail.com">hr4hkr@gmail.com</a></section><section class="social-line"><a href="https://www.linkedin.com/in/hr4hkr/">LinkedIn</a><a href="https://github.com/hr4hkr">GitHub</a></section></footer>
+		<div id="copyright"><ul><li>© Harikrishnan R</li><li><a href="index.html">Portfolio home</a></li></ul></div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+</body>
+</html>
