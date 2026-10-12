@@ -218,3 +218,100 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
 @media (prefers-reduced-motion: reduce) {
   .experience-tab, .social-icon { transition: none; }
 }
+
+
+/* Center the homepage hero content as a single, balanced group. */
+#intro.portfolio-intro {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+}
+#intro.portfolio-intro .eyebrow { width: 100%; text-align: center; }
+#intro.portfolio-intro h1 {
+  width: auto;
+  max-width: 100%;
+  margin: .2rem auto 1.3rem;
+  font-size: clamp(1.8rem, 5.2vw, 5rem);
+  text-align: center;
+}
+#intro.portfolio-intro .intro-copy { margin: 0 auto; text-align: center; }
+#intro.portfolio-intro .intro-actions { justify-content: center; width: 100%; }
+@media screen and (max-width: 736px) {
+  #intro.portfolio-intro { justify-content: center; padding: 6rem 1.25rem 3rem; }
+  #intro.portfolio-intro .intro-actions { gap: .65rem; }
+}
+
+/* Bring the experience browser into the portfolio's light mint palette. */
+#main .experience-section {
+  background: #f2f7f4;
+  border: 1px solid #dce6e3;
+  color: var(--portfolio-ink);
+  box-shadow: 0 12px 32px rgba(31,66,67,.055);
+}
+#main .experience-heading h2 { color: var(--portfolio-ink); }
+#main .experience-heading .eyebrow { color: var(--portfolio-accent-dark); }
+#main .experience-browser {
+  grid-template-columns: minmax(12rem, 14rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+#main .experience-tabs { min-width: 0; gap: .45rem; }
+#main .experience-tab {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: .8rem .9rem;
+  overflow-wrap: anywhere;
+  border: 1px solid #dce6e3;
+  border-radius: .4rem;
+  background: #fff;
+  color: var(--portfolio-ink) !important;
+  box-shadow: none !important;
+  font-family: inherit;
+  font-size: .84rem;
+  font-weight: 700;
+  letter-spacing: .015em;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none !important;
+}
+#main .experience-tab:hover {
+  background: #f5faf7;
+  color: var(--portfolio-accent-dark) !important;
+}
+#main .experience-tab[aria-selected="true"] {
+  border-color: #8bc9bd;
+  background: #e2f2ed;
+  color: #075b58 !important;
+  box-shadow: inset 3px 0 #087f8c !important;
+}
+#main .experience-tab:focus-visible { outline: 3px solid #087f8c; outline-offset: 2px; }
+.experience-panels { box-sizing: border-box; min-width: 0; }
+#main .experience-detail {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 14rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid #dce6e3;
+  border-radius: .4rem;
+  background: #fff;
+  color: #43575a;
+}
+#main .experience-detail h3 { color: var(--portfolio-ink); }
+#main .experience-detail .experience-company { color: var(--portfolio-accent-dark); }
+#main .experience-detail .experience-dates { color: var(--portfolio-muted); }
+#main .experience-detail > p:not(.experience-company),
+#main .experience-detail li { color: #43575a; }
+#main .experience-detail li::before { color: var(--portfolio-accent); }
+#main .role-history li { border-color: #e1eae6; background: #f7faf8; }
+#main .role-history strong { color: var(--portfolio-ink); }
+#main .role-history span { color: var(--portfolio-muted); }
+@media screen and (max-width: 736px) {
+  #main .experience-browser { grid-template-columns: minmax(0, 1fr); gap: .85rem; }
+  #main .experience-tabs { display: flex; width: 100%; overflow-x: auto; gap: .45rem; }
+  #main .experience-tab { flex: 0 0 auto; width: auto; max-width: 13rem; white-space: normal; }
+  #main .experience-tab[aria-selected="true"] { box-shadow: inset 0 -3px #087f8c !important; }
+  #main .experience-detail { min-height: 0; padding: 1rem; }
+}
