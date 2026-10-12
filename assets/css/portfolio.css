@@ -315,3 +315,49 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
   #main .experience-tab[aria-selected="true"] { box-shadow: inset 0 -3px #087f8c !important; }
   #main .experience-detail { min-height: 0; padding: 1rem; }
 }
+
+
+/* Company marks make each role easier to scan and link to its organization. */
+#main .experience-tab { display: flex; align-items: center; gap: .65rem; }
+.company-tab-logo { flex: 0 0 2rem; display: block; width: 2rem; height: 2rem; padding: .12rem; border: 1px solid #e2eae6; border-radius: .28rem; background: #fff; object-fit: contain; }
+.experience-tab span { min-width: 0; }
+.experience-detail-heading {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .85rem;
+}
+.company-logo-link { display: grid; width: 3rem; height: 3rem; padding: .2rem; place-items: center; border: 1px solid #e0e9e5; border-radius: .4rem; background: #fff; }
+.company-logo-link:hover { border-color: #9ccfc2; background: #f8fbf9; }
+.company-logo-link:focus-visible { outline: 3px solid #087f8c; outline-offset: 3px; }
+.company-detail-logo { display: block; width: 100%; height: 100%; border-radius: .25rem; object-fit: contain; }
+.experience-detail-copy { min-width: 0; }
+.experience-detail-copy .experience-company { overflow-wrap: anywhere; }
+.experience-detail-heading .experience-dates { grid-column: auto; white-space: nowrap; }
+#main .role-history { margin-top: 1rem; }
+#main .role-history li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .5rem 1rem; padding: .7rem .85rem; }
+#main .role-history strong { line-height: 1.4; }
+#main .role-history span { white-space: nowrap; }
+@media screen and (max-width: 900px) {
+  .experience-detail-heading { grid-template-columns: 2.8rem minmax(0, 1fr); gap: .75rem; }
+  .company-logo-link { width: 2.8rem; height: 2.8rem; }
+  .experience-detail-heading .experience-dates { grid-column: 2; margin-top: -.3rem; text-align: left; }
+}
+@media screen and (max-width: 736px) {
+  #main .experience-tab { gap: .5rem; }
+  .company-tab-logo { flex-basis: 1.75rem; width: 1.75rem; height: 1.75rem; }
+  .experience-detail-heading { grid-template-columns: 2.65rem minmax(0, 1fr); }
+  .company-logo-link { width: 2.65rem; height: 2.65rem; }
+  #main .role-history li { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  #main .role-history span { white-space: normal; text-align: left; }
+}
+
+
+.experience-disclaimer {
+  margin: 1rem 0 0;
+  padding-top: .85rem;
+  border-top: 1px solid #dce6e3;
+  color: #657779;
+  font-size: .72rem;
+  line-height: 1.55;
+}
