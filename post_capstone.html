@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Candidate Salary & Location Analysis — Harikrishnan R</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="A two-part analytics capstone: candidate salary regression and Delhi NCR location preference classification." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/portfolio.css" />
+</head>
+<body class="is-preload project-page">
+	<div id="wrapper">
+		<header id="header"><a href="index.html" class="logo">HR4HKR</a></header>
+		<nav id="nav" aria-label="Primary navigation"><ul class="links"><li><a href="index.html">Portfolio</a></li><li class="active"><a href="#main">Case study</a></li></ul><ul class="icons"><li><a href="https://github.com/hr4hkr" class="icon brands fa-github" aria-label="GitHub"><span class="label">GitHub</span></a></li></ul></nav>
+		<main id="main"><article class="post project-post">
+			<header class="major"><p class="eyebrow">Project 02 · Capstone analytics</p><h1>Candidate salary &amp; location analysis</h1><p>Can candidate profile information help estimate salary—and can it predict a preference for Delhi NCR? I explored both questions as separate modeling tasks.</p></header>
+			<div class="project-hero hero-capstone"><p class="hero-index">02</p><p class="hero-caption">Data preparation · regression · classification · evaluation</p></div>
+			<dl class="project-meta"><div><dt>Project type</dt><dd>Salary regression + location classification</dd></div><div><dt>Notebook tools</dt><dd>pandas, scikit-learn, XGBoost</dd></div><div><dt>Data</dt><dd>Candidate profiles, skills, education, work history</dd></div></dl>
+			<h2>The questions</h2>
+			<p>The capstone notebook turns a large candidate-profile table into two analyses. The first estimates cleaned salary values from profile characteristics. The second labels whether a candidate’s preferred location falls within Delhi, Noida, Gurgaon, or Faridabad.</p>
+			<h2>How I approached it</h2>
+			<ol><li><strong>Profile and clean.</strong> Inspected column types and missingness; removed rows missing all three highest-education descriptors; filled selected categorical fields and numeric gaps; and grouped locations into a focused city list plus “Other.”</li><li><strong>Represent profile details.</strong> Normalized comma-separated skills, retained a limited set of frequent skills, encoded selected categories, and reduced high-cardinality fields before modeling.</li><li><strong>Estimate salary.</strong> Compared Ridge regression, Random Forest, and XGBoost using a validation split and a separate supplied test file.</li><li><strong>Classify location preference.</strong> Built a binary Delhi NCR label, addressed training imbalance with SMOTE, and compared Logistic Regression, Random Forest, and XGBoost, including a tuned XGBoost model.</li></ol>
+			<h2>Results recorded in the notebook</h2>
+			<div class="result-grid"><div class="result-card"><strong>0.239</strong><span>XGBoost salary test R²</span></div><div class="result-card"><strong>6.32</strong><span>Salary test RMSE in the notebook’s target units (labelled LPA)</span></div><div class="result-card"><strong>0.547</strong><span>Tuned XGBoost location test ROC AUC</span></div></div>
+			<p>For salary regression, XGBoost has the best saved test score of the three models, though its R² indicates substantial salary variation remains unexplained. For location preference, the validation ROC AUC is higher than the saved test ROC AUC, and the test set contains only 42 positive examples.</p>
+			<aside class="callout"><p><strong>Evaluation note.</strong> These are notebook-reported results, not freshly reproduced estimates. The test set’s location-label distribution differs sharply from validation, and some categorical encodings are learned independently on the test data. I would standardize preprocessing using training-only mappings and investigate the distribution shift before presenting the location model as reliable.</p></aside>
+			<h2>What I learned</h2><p>This project made data preparation the central modeling challenge: candidate skills and education create high-cardinality features, while a location label can be easy to define but difficult to generalize. The next iteration should package preprocessing into fitted pipelines, verify feature alignment, and use a representative holdout set before comparing models.</p>
+			<div class="post-actions"><a class="button primary" href="https://github.com/hr4hkr/DSprojects/blob/main/Capstone%20Analytics.ipynb">View notebook</a><a class="button" href="index.html#projects">All projects</a></div>
+		</article></main>
+		<footer id="footer" class="portfolio-footer"><section class="contact-line"><h3>Let’s connect</h3><a href="mailto:hr4hkr@gmail.com">hr4hkr@gmail.com</a></section><section class="social-line"><a href="https://www.linkedin.com/in/hr4hkr/">LinkedIn</a><a href="https://github.com/hr4hkr">GitHub</a></section></footer>
+		<div id="copyright"><ul><li>© Harikrishnan R</li><li><a href="index.html">Portfolio home</a></li></ul></div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.scrollex.min.js"></script><script src="assets/js/jquery.scrolly.min.js"></script><script src="assets/js/browser.min.js"></script><script src="assets/js/breakpoints.min.js"></script><script src="assets/js/util.js"></script><script src="assets/js/main.js"></script>
+</body>
+</html>
