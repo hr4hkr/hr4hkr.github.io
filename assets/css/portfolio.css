@@ -275,7 +275,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
   letter-spacing: .015em;
   line-height: 1.4;
   text-align: left;
-  text-transform: none;
+  text-transform: none !important;
 }
 #main .experience-tab:hover {
   background: #f5faf7;
