@@ -391,3 +391,34 @@ a:focus-visible, button:focus-visible { outline: 3px solid #f0a64a; outline-offs
   #main .experience-tab { max-width: 13rem; white-space: normal; }
   #main .role-history li { padding: .55rem 0; }
 }
+
+
+/* Use a single-column About layout and compact skill tags in the site palette. */
+#main .about-panel {
+  grid-template-columns: minmax(0, 1fr);
+}
+#main .about-tool-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+#main .about-tool-tags li {
+  margin: 0;
+  padding: .42rem .8rem;
+  border: 1px solid #c9e0d8;
+  border-radius: 999px;
+  background: #e4f2ed;
+  color: #075b58;
+  font-family: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .015em;
+  line-height: 1.35;
+}
+@media screen and (max-width: 736px) {
+  #main .about-tool-tags { gap: .45rem; margin-top: 1.1rem; }
+  #main .about-tool-tags li { padding: .4rem .7rem; font-size: .75rem; }
+}
